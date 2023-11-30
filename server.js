@@ -6,6 +6,12 @@ const port = 3000;
 
 server.use(express.urlencoded({ extended: true }));
 
+// GET endpoint to render the form
+server.get('/itc505/lab7/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// POST endpoint to handle the form submission
 server.post('/itc505/lab7/', (req, res) => {
   const { pluralNoun, adjective, verb, noun, adverb } = req.body;
 
