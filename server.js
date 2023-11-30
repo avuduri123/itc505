@@ -1,25 +1,28 @@
+// server.js
 const express = require('express');
-const path = require('path');
-const server = express();
-
+const bodyParser = require('body-parser');
+const app = express();
 const port = 3000;
 
-server.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
-// GET endpoint to render the form
-server.get('/itc505/lab7/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
 
-// POST endpoint to handle the form submission
-server.post('/itc505/lab7/', (req, res) => {
+app.post('/', (req, res) => {
   const { pluralNoun, adjective, verb, noun, adverb } = req.body;
+  // Ensure that the form fields are correctly received
+  console.log('Form Data:', req.body);
 
+  // Create an adventurous story using the input from the form
   const madLib = `In a world of ${pluralNoun}, where everything was ${adjective}, they spent their days ${verb} ${adverb}, creating a life that was truly ${noun}.`;
 
+  // Send the generated adventure story as the response
   res.send(madLib);
 });
 
-server.use(express.static(path.join(__dirname, 'public')));
-
-server.listen(port, () => console.log(`Server running on http://localhost:${port}`));
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
