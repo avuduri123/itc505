@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Colorful Mad Libs</title>
+</head>
+<body style="background-color: #ffd699; font-family: 'Arial', sans-serif;">
+
+    <header style="text-align: center; padding: 20px; background-color: #ff6666;">
+        <h1 style="color: white; font-weight: bold;">Rainbow Mad Libs</h1>
+    </header>
+
+    <main style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+
+        <form action="/itc505/lab7/" method="post" id="madLibForm" style="max-width: 400px; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);">
+
+            <label for="pluralNoun" style="color: #333; font-weight: bold;">Plural Noun:</label>
+            <input type="text" name="pluralNoun" id="pluralNoun" required style="width: 100%; padding: 10px; border: 1px solid #ff6666; border-radius: 4px;">
+
+            <label for="adjective" style="color: #333; font-weight: bold;">Adjective:</label>
+            <input type="text" name="adjective" id="adjective" required style="width: 100%; padding: 10px; border: 1px solid #ff6666; border-radius: 4px;">
+
+            <label for="verb" style="color: #333; font-weight: bold;">Verb:</label>
+            <input type="text" name="verb" id="verb" required style="width: 100%; padding: 10px; border: 1px solid #ff6666; border-radius: 4px;">
+
+            <label for="noun" style="color: #333; font-weight: bold;">Noun:</label>
+            <input type="text" name="noun" id="noun" required style="width: 100%; padding: 10px; border: 1px solid #ff6666; border-radius: 4px;">
+
+            <label for="adverb" style="color: #333; font-weight: bold;">Adverb:</label>
+            <input type="text" name="adverb" id="adverb" required style="width: 100%; padding: 10px; border: 1px solid #ff6666; border-radius: 4px;">
+
+            <button type="submit" class="generate-mad-lib-button" style="background-color: #ff6666; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;">Generate Mad Lib</button>
+        </form>
+
+    </main>
+</body>
+</html>
